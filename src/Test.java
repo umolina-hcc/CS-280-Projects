@@ -1,4 +1,4 @@
-import assignments.datastructures.*;
+    import assignments.datastructures.*;
 import assignments.sorting.*;
 
 public class Test {
@@ -31,6 +31,7 @@ public class Test {
         /* Call additional main routines here as you create new sorting algorithms. */
 
         // Test data structures.
+        KeyValuePair.main(args);
         /* Call additional main routines as you create new data strutures. */
 
         return true;
