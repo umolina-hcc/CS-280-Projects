@@ -1,4 +1,4 @@
-    import assignments.datastructures.*;
+import assignments.datastructures.*;
 import assignments.sorting.*;
 
 public class Test {
