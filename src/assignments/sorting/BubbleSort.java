@@ -15,7 +15,7 @@ public class BubbleSort extends SortingAlgorithm {
      */
     public void sort(Integer[] array) {
         for (int k = array.length; k >= 2; k --) {    // k is the length of the sub-array we are looping through in the inner loop
-            for (int i = 0; i < k; i++) {
+            for (int i = 0; i < k-1; i++) { //go up to k-1 bec
                 if (array[i] > array[i+1]) {
                     // swap adjacent items (i and i+1)
                     swap(array, i, i+1);
