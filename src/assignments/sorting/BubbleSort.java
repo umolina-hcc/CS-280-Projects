@@ -43,6 +43,24 @@ public class BubbleSort extends SortingAlgorithm {
     public static void main(String[] args) {
         SortingAlgorithm.validate(new BubbleSort());
         System.out.println("BubbleSort has passed all tests.");
+
+        // fill an array with random numbers
+
+        int N = 6234;
+        Integer[] array = new Integer[N];
+        for (int i = 0; i < array.length; i ++) {
+            array[i] = (int)(N*Math.random());
+        }
+
+        // Measuring runtime
+        SortingAlgorithm sorter = new BubbleSort();
+        long start = System.nanoTime();
+        sorter.sort(array);
+        long end = System.nanoTime();
+        double duration = (end - start)/(1e9);
+
+        System.out.println("Array size: "+N);
+        System.out.println("Total duration: "+duration);
     }
 
 }
