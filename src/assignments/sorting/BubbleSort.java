@@ -2,14 +2,15 @@ package assignments.sorting;
 /**
  * 
  * Swap adjacent elements over and over until the whole array is sorted.
+ * 
  */
 public class BubbleSort extends SortingAlgorithm {
     /**
-     * Sort an array in-place using bubble sort
+     * Sort an array in-place using Bubble Sort
      * 
      * Post-condition: arrary is sorted in ascending order
      * 
-     * @param array an arrary of integers
+     * @param array an array of integers
      * 
      * 
      */
