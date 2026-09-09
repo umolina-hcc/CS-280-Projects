@@ -35,7 +35,7 @@ public class Vector<T> implements List<T> {
      * @return the number of items
      */
     public int length() {
-        // TODO implement this method
+        return this.size;
     }
     
     /**
@@ -47,7 +47,7 @@ public class Vector<T> implements List<T> {
         // You may use assert statements to enforce pre-conditions at runtime.
         assert 0 <= index && index < this.size;
 
-        // TODO implement this method
+        return this.array[index];
     }
     
     /**
@@ -59,7 +59,7 @@ public class Vector<T> implements List<T> {
         // You may use assert statements to enforce pre-conditions at runtime.
         assert 0 <= index && index < this.size;
 
-        // TODO implement this method
+        this.array[index] = value;
     }
     
     /**
@@ -68,7 +68,12 @@ public class Vector<T> implements List<T> {
      * @return true iff the collection contains value
      */
     public boolean contains(T value) {
-        // TODO implement this method
+        for (int  i = 0; i < this.size; i++) {
+            if (value == null ? this.array[i] == null : value.equals(this.array[i])) {
+                return true;
+            }
+        }
+        return false;
     }
     
     /**
@@ -81,7 +86,14 @@ public class Vector<T> implements List<T> {
         // Note this function has a somewhat different pre-condition!
         assert 0 <= index && index <= this.size;
 
-        // TODO implement this method
+        if (this.size == this.array.length) {
+            this.resize(this.array.length * 2);
+        }
+        for (int i = this.size; i > index; i--) {
+            this.array[i] = this.array[i - 1];
+        }
+        this.array[index] = value;
+        this.size++;
     }
     
     /**
@@ -93,7 +105,14 @@ public class Vector<T> implements List<T> {
         // You may use assert statements to enforce pre-conditions at runtime.
         assert 0 <= index && index < this.size;
 
-        // TODO implement this method
+        T removed = this.array[index];
+        for (int i = index; i < this.size - 1; i++) {
+            this.array[i] = this.array[i+1];
+
+        }
+            this.array[this.size - 1] = null;
+            this.size--;
+            return removed;
     }
 
     /**
@@ -105,7 +124,11 @@ public class Vector<T> implements List<T> {
      */
     @SuppressWarnings("unchecked")
     private void resize(int newSize) {
-        // TODO implement this method. Take inspiration from the constructor implementation.
+        T[] newArray = (T[])(new Object[newSize]);
+        for (int i = 0; i < this.size; i++) {
+            newArray[i] = this.array[i];
+        }
+        this.array = newArray;
     }
 
     /**

@@ -36,6 +36,7 @@ public class Test {
         BubbleSort.main(args);
         InsertionSort.main(args);
         SelectionSort.main(args);
+        Vector.main(args);
         /* Call additional main routines as you create new data strutures. */
 
         return true;
