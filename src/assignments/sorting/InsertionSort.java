@@ -4,31 +4,28 @@ package assignments.sorting;
  * 
  */
 
-public class InsertionSort extends SortingAlgorithm {
+public class InsertionSort extends SortingAlgorithm<Integer> {
     /**
      * Sort an array using InsertionSort
      * 
      * Post-condition: Array is sorted in ascending order
-     * 
-     * @param array an array of integers
-     * 
      */
-    public void sort(Integer[] array) {
-        for (int i = 1; i < array.length; i++) {
-            int currentValue = array[i];
 
-            int j = i-1;
-            while (j >= 0 && array[j] > currentValue) {
+    public void sort(Integer[] array) {
+        for (int i = 1; i < array.length; i++) {  // elements before i is already sorted
+            Integer value = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] > value) { // shifting larger values to make room for value
                 array[j + 1] = array[j];
-                j = j--;
+                j--;
             }
-            array[j + 1] = currentValue;
-        } 
+            array[j + 1] = value; // insert value in its sorted position
+        }
     }
 
-
     public static void main(String[] args) {
-        SortingAlgorithm.validate(new BubbleSort());
+        SortingAlgorithm.validate(new InsertionSort());
         System.out.println("InsertionSort has passed all tests.");
     }
 }
