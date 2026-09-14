@@ -4,7 +4,7 @@ package assignments.sorting;
  * Swap adjacent elements over and over until the whole array is sorted.
  * 
  */
-public class BubbleSort extends SortingAlgorithm<Integer> {
+public class BubbleSort<T extends Comparable<T>> extends SortingAlgorithm<Integer> {
     /**
      * Sort an array in-place using Bubble Sort
      * 
@@ -42,7 +42,7 @@ public class BubbleSort extends SortingAlgorithm<Integer> {
      * @param args command-line args
      */
     public static void main(String[] args) {
-        SortingAlgorithm.validate(new BubbleSort());
+        SortingAlgorithm.validate(new BubbleSort<Integer>());
         System.out.println("BubbleSort has passed all tests.");
 
         // fill an array with random numbers
@@ -54,7 +54,7 @@ public class BubbleSort extends SortingAlgorithm<Integer> {
         }
 
         // Measuring runtime
-        SortingAlgorithm<Integer> sorter = new BubbleSort();
+        SortingAlgorithm<Integer> sorter = new BubbleSort<Integer>();
         long start = System.nanoTime();
         sorter.sort(array);
         long end = System.nanoTime();

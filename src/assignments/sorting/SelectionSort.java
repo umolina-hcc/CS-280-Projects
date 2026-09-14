@@ -3,7 +3,7 @@ package assignments.sorting;
  * Picking out the smallest element one by one
  */
 
-public class SelectionSort extends SortingAlgorithm<Integer> {
+public class SelectionSort<T extends Comparable<T>> extends SortingAlgorithm<Integer> {
     /**
      * 
      * Sort an array using Insertion Sort
@@ -31,7 +31,7 @@ public class SelectionSort extends SortingAlgorithm<Integer> {
     
 
     public static void main (String[] args) {
-        SortingAlgorithm.validate(new SelectionSort());
+        SortingAlgorithm.validate(new SelectionSort<Integer>());
         System.out.println("SelectionSort has passed all tests.");
     }
 }

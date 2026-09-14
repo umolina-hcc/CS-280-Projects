@@ -4,7 +4,7 @@ package assignments.sorting;
  * 
  */
 
-public class InsertionSort extends SortingAlgorithm<Integer> {
+public class InsertionSort<T extends Comparable<T>> extends SortingAlgorithm<Integer> {
     /**
      * Sort an array using InsertionSort
      * 
@@ -25,7 +25,7 @@ public class InsertionSort extends SortingAlgorithm<Integer> {
     }
 
     public static void main(String[] args) {
-        SortingAlgorithm.validate(new InsertionSort());
+        SortingAlgorithm.validate(new InsertionSort<Integer>());
         System.out.println("InsertionSort has passed all tests.");
     }
 }
